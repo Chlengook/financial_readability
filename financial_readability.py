@@ -101,7 +101,23 @@ class readability:
     
     tree_features(as_dict=False):
         Function to create the tree based features.
+        
+    semantic_features(as_dict=False):
+        Function to calculate the cumulative explained variance for PCA on the word embeddings.
+        
+    word_features(embeddings = False):
+        Combines the featuresets to a Dataframe with all the 88 word-features. 
     
+    paragraph_features(embed = False, as_dict = False):
+        Create the feature set over the total paragraph based on the 
+        features estimated per word.
+        
+    bofir(cat5 = True):
+        Use the paragraph features to calculate the BOFIR score for a
+        given paragraph.
+        
+    readability_measures(as_dict = False):
+        Return the BOFIR score as well as other classic readability formulas for the paragraph.  
     """
     
     def __init__(self, paragraph):
@@ -722,8 +738,7 @@ class readability:
             return d
         else:
             return pd.DataFrame(d, index=['readability_score'])
-        
-            
+  
 #%%    
 # Example  
 if __name__ == "__main__":  
