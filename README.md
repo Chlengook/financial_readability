@@ -54,6 +54,7 @@ word_features(embeddings = False):
 
 #### Paragraph-features:
 paragraph_features(embed = False, as_dict = False):
+
   		"""
         Create the feature set over the total paragraph based on the 
         features estimated per word.
@@ -77,6 +78,7 @@ paragraph_features(embed = False, as_dict = False):
 
 #### BOFIR:   
 bofir(cat5 = True):
+
         """
         Use the paragraph features to calculate the BOFIR score for a
         given paragraph.
@@ -95,6 +97,7 @@ bofir(cat5 = True):
   
 #### Readability Measures:  
 readability_measures(as_dict = False):
+
         """
         Return the BOFIR score as well as other classic readability formulas for the paragraph.
         
