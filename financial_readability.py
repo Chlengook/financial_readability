@@ -66,7 +66,7 @@ with pkg_resources.resource_stream('financial_readability', 'models/bofir_model_
 
 #%%
 # Create Features
-class text_features:
+class readability:
     """
     Creates various text features for a paragraph
     
@@ -728,11 +728,12 @@ class text_features:
 # Example  
 if __name__ == "__main__":  
     
-    test_parapraph = ('The high functionality of the ABB products enables optimal performance of HVAC systems.'
+    test_parapraph = ('This is an example that could start like that: '+ 
+                      'The high functionality of the ABB products enables optimal performance of HVAC systems.'
                       + ' The power consumption of the Swiss actuators is reduced by means of energy-optimizing algorithms by 2012.')
     
     # initiate the object:
-    test_text = text_features(test_parapraph)
+    test_text = readability(test_parapraph)
     
     print('The Raw Tokens:')
     print('-------------------')
@@ -748,5 +749,5 @@ if __name__ == "__main__":
     print('-------------------')
     print('BOFIR score:')
     print('-------------------')
-    print(test_text.bofir(cat5 = False))
+    print(test_text.bofir(cat5 = True))
     
